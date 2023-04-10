@@ -1,0 +1,16 @@
+<div class="card">
+    <img src="{{alien.img_url}}" class="card-img-top" alt="...">
+    <div class="card-body d-flex-column text-center">
+        <h5 class="card-title">{{alien.name}}</h5>
+        <p class="card-text">{{alien.short_desc}}</p>
+        <div *ngIf="urlname; else elseres">
+            <a (click)="goDetails(urlname)" class="btn btn-primary">{{"seeMoreBtn"|translate}}</a>
+        </div>
+        <ng-template #elseres>
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Loading Link...
+            </button>
+        </ng-template>
+    </div>
+</div>

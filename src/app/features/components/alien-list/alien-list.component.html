@@ -1,0 +1,8 @@
+<app-back-btn></app-back-btn>
+<ng-container *ngIf="aliens">
+    <div class="row w-100 d-flex justify-content-center"data-masonry='{"percentPosition": true }'  >
+        <div class="col-12  col-sm-6 col-md-3 m-2" *ngFor="let alien of aliens">
+            <app-alien-card [alien]="alien"></app-alien-card>
+        </div>
+    </div>
+</ng-container>

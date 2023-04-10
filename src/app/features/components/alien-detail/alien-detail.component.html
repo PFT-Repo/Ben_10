@@ -1,0 +1,33 @@
+<ng-container *ngIf="alien; else loading">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">{{"name" | translate}}</th>
+            <th scope="col">{{"img" | translate}}</th>
+            <th scope="col">{{"description" | translate}}</th>
+            <th scope="col">{{"planet" | translate}}</th>
+            <th scope="col">{{"specie" | translate}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{alien.name}}</td>
+            <td><img src="{{alien.img_url}}" alt=""></td>
+            <td>{{alien.short_desc}}</td>
+            <td>{{alien.planet}}</td>
+            <td>{{alien.specie}}</td>
+          </tr>
+        </tbody>
+      </table>
+</ng-container>
+  <ng-template #loading>
+    <div  class="d-flex w-100 text-center">
+        <button class="btn btn-primary d-block" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading Selected Alien...
+          </button>
+    </div>
+  </ng-template>
+  <div class="d-flex justify-content-end">
+    <app-back-btn></app-back-btn>
+  </div>
